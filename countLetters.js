@@ -1,7 +1,7 @@
 function countLetters(sentence){
-  var letters = sentence.toLowerCase().split("")
-  var occurence = {}
-  var validSubset = /[a-z]/
+  var letters = sentence.toLowerCase().split("");
+  var occurence = {};
+  var validSubset = /[a-z]/;
 
   letters.forEach(update)
 
@@ -17,4 +17,4 @@ function countLetters(sentence){
   return(occurence);
 }
 
-console.log(countLetters("lighthouse in the house"))
+console.log(countLetters("lighthouse in the house"));

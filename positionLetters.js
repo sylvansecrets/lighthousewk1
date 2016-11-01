@@ -1,10 +1,9 @@
-function positionLetters(sentence){
-  var letters = sentence
-  var occurence = {}
-  var validSubset = /[a-z]/i
+function positionLetters(letters){
+  var occurence = {};
+  var validSubset = /[a-z]/i;
 
   for (var i = 0; i < letters.length; i++)
-    update(letters[i], i)
+    update(letters[i], i);
 
   function update (l, k){
     if (l.match(validSubset)){
@@ -18,4 +17,4 @@ function positionLetters(sentence){
   return(occurence);
 }
 
-console.log(positionLetters("lighthouse in the house"))
+console.log(positionLetters("lighthouse in the house"));
