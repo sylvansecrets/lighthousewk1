@@ -37,6 +37,9 @@ Z --..,\
 9 ----."
 
 function morseTranslator(str){
+  if (typeof(str)!=="String"){
+    str = str.join(" ")
+  }
   output = [];
   input = str.split("");
   cipher = morse_cipher.split(",")
@@ -45,6 +48,20 @@ function morseTranslator(str){
     pair = p.split(" ");
     dict[pair[0]] = pair[1];
   })
+  input.forEach(function(c){
+    val = dict[c.toUpperCase()];
+    if (val){
+      output.push(val+" ");
+    } else if (c===" "){
+      output.push("/")
+    }
+  })
+  strOutput = output.join("");
+  return strOutput;
 
 }
 
+input = process.argv.slice(2);
+if (input){
+  console.log(morseTranslator(input));
+}
